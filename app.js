@@ -1,6 +1,11 @@
 const express = require('express');
-const morgan = require('morgan');
+const morgan = require('morgan');//for logging api
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/ApiAuthentication');
+
 const app = express();
 
 //Middlewares
