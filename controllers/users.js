@@ -39,9 +39,12 @@ module.exports = {
     },
     signIn: async (req, res, next) => {
         //Generate Token (secret hash)
+        const token = signInToken(req.user);
         console.log('userController.sigIn called');
+        res.status(200).json({ token: token });
     },
     secret: async (req, res, next) => {
         console.log('userController.secret called');
+        res.json({ secret: 'resource' });
     }
 }
